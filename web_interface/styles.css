@@ -1,0 +1,370 @@
+:root {
+      --primary-color: #7c4d00;
+      --accent-color: #ffb74d;
+      --background-color: #fff3e0;
+      --card-background: #ffffff;
+      --text-color: #4e342e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    #currentTime {
+      font-size: 3.5em;
+      font-weight: bold;
+      text-align: center;
+      background: linear-gradient(135deg, #5d533b, #38271f);
+      color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      display: block;
+      width: 300px;
+      max-width: 80%;
+      margin: 15px auto;
+    }
+
+    #servo {
+      font-size: 1em;
+      font-weight: bold;
+      color: var(--primary-color);
+      padding: 8px 16px;
+      border-radius: 10px;
+      display: column;
+      margin-top: 10px;
+    }
+
+    #servoState {
+      font-size: 1em;
+      font-weight: bold;
+      color: #6a4517;
+      padding: 8px 16px;
+      background: rgba(255, 183, 77, 0.3);
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    #schedule {
+      font-size: 1em;
+      font-weight: bold;
+      color: var(--primary-color);
+      padding: 8px 16px;
+      background: rgba(255, 183, 77, 0.3);
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    body {
+      font-family: 'Comfortaa', cursive;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    aside {
+      background-color: var(--primary-color);
+      color: white;
+      width: 250px;
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    aside h2 {
+      font-size: 1.5em;
+      margin-bottom: 1rem;
+    }
+
+    aside p {
+      font-size: 1em;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background-color: var(--accent-color);
+      padding: 1rem;
+    }
+
+    .pet-photo {
+      width: 50px; 
+      height: 50px;
+      overflow: hidden;
+      position: absolute;
+    }
+
+    .pet-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .left-photo {
+      left: 10px;
+    }
+
+    .right-photo {
+      right: 10px;
+    }
+
+    header h1 {
+      font-size: 2em;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center; /* Центруємо кнопки */
+      gap: 10px;
+      margin-top: 0.5rem;
+    }
+
+    nav button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    nav button:hover {
+      background-color: #ff9800;
+      transform: scale(1.05);
+    }
+    
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr; /* Три колонки */
+      grid-template-rows: auto auto; /* Два рядки */
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid #c6710a;
+      margin-top: 0;
+    }
+
+    #scheduleState {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: var(--primary-color);
+      padding: 8px 16px;
+      background: rgba(255, 183, 77, 0.3);
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    #schedule {
+      font-size: 1em;
+      font-weight: bold;
+      color: var(--primary-color);
+      padding: 8px 16px;
+      background: rgba(255, 183, 77, 0.3);
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    #currentTimeCard {
+      grid-column: 1; 
+      grid-row: 1;
+    }
+
+    #feedingScheduleCard {
+      grid-column: 3; 
+      grid-row: 1;
+    }
+
+    #activeServo{
+      grid-column: 2; 
+      grid-row: 1;
+    }
+
+    #foodChartCard {
+      grid-column: span 3; 
+      grid-row: 3; 
+    }
+
+    #manualFeed {
+      grid-column: span 3; 
+      grid-row: 4; 
+    }
+    #weightCard {
+      grid-column: span 3; 
+      grid-row: 2; 
+    }
+
+    .card {
+      background: var(--card-background);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card h2 {
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .card button, .card input[type="time"] {
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      margin-top: 1rem;
+    }
+
+    .card button {
+      background-color: var(--accent-color);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .card input[type="time"] {
+      border: 1px solid #ccc;
+      background-color: #fffaf0;
+      color: var(--text-color);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: var(--accent-color);
+      color: white;
+    }
+
+    canvas {
+      margin-top: 1rem;
+      max-width: 100%;
+    }
+
+    #notification {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #b98229;
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+      font-size: 16px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+
+    @media (max-width: 768px) {
+      aside {
+        display: none;
+      }
+
+      header h1 {
+        font-size: 1.5em;
+      }
+    }
+
+    .google-drive-box {
+      display: block;
+      text-align: center;
+      background: #F4B400;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .google-drive-box:hover {
+      background-color: #E37400;
+      transform: scale(1.05);
+    }
+
+    #animalModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(45, 23, 4, 0.6);
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #ffc67b; 
+  padding: 20px;
+  max-width: 400px;
+  margin: 15% auto;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #aa5930; 
+}
+
+#modalMessage {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2d1704; 
+  margin-bottom: 15px;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-buttons button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  background: #aa5930;
+  transition: background 0.3s ease;
+}
+
+.modal-buttons button:hover {
+  background: #5f2b15;
+}
+
+.modal-buttons button:active {
+  background: #303F9F;
+}
