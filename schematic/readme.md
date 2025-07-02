@@ -24,28 +24,24 @@ The circuit is structured around **functional modules** connected to the ESP32 a
     </tr>
     <tr><td>SIOC, VSYNC, HREF,</td></tr>
     <tr><td>PCLK, PWDN, RESET</td></tr>
-
     <tr>
       <td><strong>HC-SR04</strong></td>
       <td>Digital IO</td>
       <td>Trig, Echo</td>
       <td>Measures distance to detect food level</td>
     </tr>
-
     <tr>
       <td><strong>HX711 + Load Cell</strong></td>
       <td>Digital IO</td>
       <td>DT, SCK</td>
       <td>Measures food weight</td>
     </tr>
-
     <tr>
       <td><strong>Servo Motor</strong></td>
       <td>PWM</td>
       <td>PWM (e.g., IO13)</td>
       <td>Controls mechanical dispensing mechanism</td>
     </tr>
-
     <tr>
       <td><strong>OLED SSD1306</strong></td>
       <td>I²C</td>
