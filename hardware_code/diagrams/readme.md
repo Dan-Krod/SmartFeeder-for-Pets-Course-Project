@@ -74,13 +74,38 @@ This advanced logic diagram reveals how each module operates and interacts at ru
 ---
 
 ## 🔄 Communication Flows:
-| From → To                                | Purpose                                                         |
-| **HARDWARE → BACK-END**                  | Captures input from sensors (distance, weight, button presses)  |
-| **BACK-END → DATABASE**                  | Uploads data, logs, feeding records                             |
-| **DATABASE → WEB-INTERFACE**             | Delivers real-time data to the UI (charts, state)               |
-| **WEB-INTERFACE → DATABASE → BACK-END**  | Sends control commands (e.g., activate servo, schedule feeding) |
-| **BACK-END → Google Drive**              | Sends photo logs via Apps Script (base64-encoded)               |
-## 🔁 Interaction Flows:
+<h3>Communication Flows:</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left;">From → To</th>
+      <th style="text-align:left;">Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>HARDWARE → BACK-END</strong></td>
+      <td>Captures input from sensors (distance, weight, button presses)</td>
+    </tr>
+    <tr>
+      <td><strong>BACK-END → DATABASE</strong></td>
+      <td>Uploads data, logs, feeding records</td>
+    </tr>
+    <tr>
+      <td><strong>DATABASE → WEB-INTERFACE</strong></td>
+      <td>Delivers real-time data to the UI (charts, state)</td>
+    </tr>
+    <tr>
+      <td><strong>WEB-INTERFACE → DATABASE → BACK-END</strong></td>
+      <td>Sends control commands (e.g., activate servo, schedule feeding)</td>
+    </tr>
+    <tr>
+      <td><strong>BACK-END → Google Drive</strong></td>
+      <td>Sends photo logs via Apps Script (base64-encoded)</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 > This overview helps orient contributors and reviewers to the architecture without diving into full implementation details.
