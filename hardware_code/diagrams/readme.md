@@ -7,7 +7,6 @@ This directory contains visual documentation for the **Smart Feeder for Pets** c
 ## 🧩 Diagram 1: System Interaction Overview
 
 **Filename:** `basic_logic_diagram.jpg`  
-**Type:** High-Level System Diagram
 
 ### 🔍 Description:
 This diagram presents a simplified yet complete overview of the **four key subsystems** involved in the smart feeder solution:
@@ -42,7 +41,6 @@ This diagram presents a simplified yet complete overview of the **four key subsy
 ## 🔬 Diagram 2: Detailed Logic Architecture
 
 **Filename:** `detailed_logic_diagram.png`  
-**Type:** Full Component Interaction Map
 
 ### 🔍 Description:
 This advanced logic diagram reveals how each module operates and interacts at runtime — from hardware routines to real-time database syncing and user-triggered events.
