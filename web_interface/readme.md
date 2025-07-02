@@ -28,15 +28,52 @@ web_interface/
 
 ## 🔌 Firebase Interaction
 
-| Feature                 | Firebase Path                            | Description                          |
-|-------------------------|------------------------------------------|--------------------------------------|
-| Manual feeding          | `/servo/state`                           | Starts or stops feeding              |
-| Schedule feeding time   | `/servo/scheduled_time`                  | Stores scheduled time value          |
-| Trigger weigh sensor    | `/weight_sensor/weight/activate`         | Activates load cell via HX711        |
-| Display weight history  | `/weight_sensor/weight_logs`             | Logs for chart and table             |
-| Feeding durations       | `/obstacle_logs`                         | Ultrasonic sensor logs               |
-| Feed action history     | `/manual_feedings`                       | Logs user-triggered feed events      |
-| Animal detection popup  | `/notifications/animal_detected/active`  | Controls UI modal display            |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left;">Feature</th>
+      <th style="text-align:left;">Firebase Path</th>
+      <th style="text-align:left;">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Manual feeding</strong></td>
+      <td><code>/servo/state</code></td>
+      <td>Starts or stops feeding</td>
+    </tr>
+    <tr>
+      <td><strong>Schedule feeding time</strong></td>
+      <td><code>/servo/scheduled_time</code></td>
+      <td>Stores scheduled time value</td>
+    </tr>
+    <tr>
+      <td><strong>Trigger weigh sensor</strong></td>
+      <td><code>/weight_sensor/weight/activate</code></td>
+      <td>Activates load cell via HX711</td>
+    </tr>
+    <tr>
+      <td><strong>Display weight history</strong></td>
+      <td><code>/weight_sensor/weight_logs</code></td>
+      <td>Logs for chart and table</td>
+    </tr>
+    <tr>
+      <td><strong>Feeding durations</strong></td>
+      <td><code>/obstacle_logs</code></td>
+      <td>Ultrasonic sensor logs</td>
+    </tr>
+    <tr>
+      <td><strong>Feed action history</strong></td>
+      <td><code>/manual_feedings</code></td>
+      <td>Logs user-triggered feed events</td>
+    </tr>
+    <tr>
+      <td><strong>Animal detection popup</strong></td>
+      <td><code>/notifications/animal_detected/active</code></td>
+      <td>Controls UI modal display</td>
+    </tr>
+  </tbody>
+</table>
 
 ## 🚀 Getting Started
 
