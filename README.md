@@ -153,10 +153,14 @@ SMARTFEEDER-FOR-PETS-COU/
 
 **[Dan Krod]**   
 Academic Year: 2025  
-Email: [you@example.com]
 
 ---
 
-## 📜 License
+## ⚠️ Usage & Copyright
 
-This project is submitted for educational purposes and is not licensed for commercial redistribution. Please contact the author if you wish to extend or reuse any part of the design.
+All content in this repository is intended for educational and archival purposes.  
+Any reuse, adaptation, or distribution of code or documentation from this project requires explicit permission from the author.
+
+Please contact the maintainer if you wish to copy, reference, or build upon the materials.
+
+© 2025 Daniel. All rights reserved.
