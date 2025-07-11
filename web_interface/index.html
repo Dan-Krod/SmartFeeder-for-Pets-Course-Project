@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Розумна годівничка</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body>
+  <aside>
+    <h2><i class="fas fa-cat"></i> Стан системи</h2>
+    <p>Wi-Fi: Підключено</p>
+    <p>Камера: Активна</p>
+    <p>Корм: Достатньо</p>
+
+    <h2>📂 Google Drive</h2>
+    <a href="" class="google-drive-box" target="_blank">
+      <i class="fab fa-google-drive"></i> Переглянути файли
+    </a>
+
+  </aside>
+  <div class="content">
+    <header>
+      <div class="pet-photo left-photo">
+        <img src="web_interface\\images\\image_2.jpg" alt="Улюбленець">
+      </div>
+
+      <h1>Автоматизована годівничка для пухнастиків</h1>
+      <hr>
+      <div class="pet-photo right-photo">
+        <img src="web_interface\\images\\image_1.jpg" alt="Улюбленець">
+      </div>
+
+      <nav>
+        <button onclick="showPage('main')">Головна</button>
+        <button onclick="window.open('http://...../', '_blank')">Камера</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="currentTimeCard" class="card">
+        <h2>Поточний час</h2>
+        <hr>
+        <p id="currentTime">00:00:00</p>
+      </section>
+
+      <section id="activeServo" class="card">
+        <h2>Годування</h2>
+        <hr>
+        <button onclick="setServo(1); showNotification('Годівля запущена')">Погодувати</button>
+        <p id="servo">Стан серво:</p>
+        <p><strong id="servoState">Завантаження...</strong></p>
+      </section>
+
+      <section id="feedingScheduleCard" class="card">
+        <h2>Планування годування</h2>
+        <hr>
+        <input type="time" id="activationTime">
+        <button onclick="sendActivationTime(); showNotification('Час заплановано')">Запланувати</button>
+        <p id="schedule">Останнє планування:</p>
+        <p><strong id="scheduleState">Завантаження...</strong></p>
+      </section>
+
+      <section id="foodChartCard" class="card">
+        <h2>Графік прийому їжі</h2>
+        <hr>
+        <canvas id="obstacleChart" width="400" height="200"></canvas>
+      </section>
+
+      <section id="weightCard" class="card">
+        <h2>Зважування</h2>
+        <hr>
+        <button onclick="activateWeightSensor(); showNotification('Запит на зважування надіслано')">Зважити</button>
+        <canvas id="weightChart" width="400" height="200"></canvas> 
+      </section>
+
+      <section id="manualFeed" class="card">
+        <h2>Історія ручних годувань</h2>
+        <table>
+          <thead>
+            <tr><th>Час</th><th>Дія</th></tr>
+          </thead>
+          <tbody id="manualFeedTable">
+            <tr><td colspan="2">Завантаження...</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div id="animalModal">
+        <div class="modal-content">
+          <p id="modalMessage">🐾 Тут буде повідомлення!</p>
+          <div class="modal-buttons">
+            <button id="openStreamBtn">📹 Перейти на трансляцію</button>
+            <button id="takePhotoBtn">📸 Зробити фото</button>
+            <button id="cancelBtn">❌ Скасувати</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="notification"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
